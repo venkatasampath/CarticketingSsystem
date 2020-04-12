@@ -1,0 +1,19 @@
+{% extends 'tc/base.html' %}
+{%block body_content%}
+<div class="text-center">
+    <h1>Welcome to Max car servicing center</h1>
+</div>
+<div>
+    {% if request.user.role == "staff" %}
+    <h2> Welcome Staff</h2>
+    {% endif %}
+    {% if request.user.role == "customer" %}
+    <h2> Welcome Customer</h2>
+    {% endif %}
+
+</div>
+
+
+
+{%endblock body_content%}
+
