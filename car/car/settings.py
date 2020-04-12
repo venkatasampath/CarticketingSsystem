@@ -25,7 +25,7 @@ SECRET_KEY = '85o1o(va)7ryrpd#jny*5%yu$&roo_96x*f9i3(_o@am9d2(o*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -114,18 +114,15 @@ USE_L10N = True
 
 USE_TZ = True
 
-'''STATICFILES_DIRS = [
-    os.path.join(PROJECT_ROOT, "static"),
-    '/car/static/',
-]'''
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/2.2/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+LOGIN_REDIRECT_URL = '/'
+
 
 AUTH_USER_MODEL = "tc.User"
 
