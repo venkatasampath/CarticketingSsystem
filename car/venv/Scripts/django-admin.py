@@ -1,4 +1,4 @@
-#!C:\Users\vravi\PycharmProjects\carticketingsystem\venv\Scripts\python.exe
+#!C:\Users\vravi\Downloads\car_final\car\venv\Scripts\python.exe
 from django.core import management
 
 if __name__ == "__main__":

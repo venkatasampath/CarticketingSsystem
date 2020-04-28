@@ -1,0 +1,25 @@
+{% extends 'tc/base.html' %}
+{% load static %}
+{% block body_content %}
+    <h2>All Customer Tickets</h2>
+    {% for ticket in list_info %}
+        <div class="card">
+            <div class="Card-Header"
+                 style="background-color: #C4D6EC; padding-top: 2%; padding-bottom: 1%; padding-left:5px;">
+                <span class="font-weight-bold">customer:{{ ticket.customer }}</span>
+            </div>
+            <div class="card-body">
+                <span class="font-muted">repairitems: {{ ticket.repairitems }} </span>
+                <br>
+                <span class="font-muted">Issue: {{ ticket.Issue }}</span>
+                <br>
+                <span class="font-muted">severity: {{ ticket.severity }}</span>
+                <br>
+                <span class="font-muted">Ticket_date: {{ ticket.Ticket_date }}</span>
+            </div>
+            </div>
+
+
+        </div>
+    {% endfor %}
+{% endblock body_content %}

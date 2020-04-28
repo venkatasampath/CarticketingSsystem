@@ -1,0 +1,50 @@
+{% extends 'tc/base.html' %}
+{% load static %}
+{% block body_content %}
+ <style>
+        body {
+            background-color: beige;
+        }
+    </style>
+    <div class="row">
+        <h2 style="padding-left: 20Px">Customers List</h2>
+    </div>
+    <div>
+        <a style="margin-right:5px;" href = '{% url "tc:add_customer" %}'>Add new Customers</a>
+        <table   class="table-bordered table-hover">
+            <thead>
+            <tr class="bg-info">
+                <th >Customers Name</th>
+                <th >Customers Email</th>
+                <th>Customers Cust_number</th>
+                <th >Customers City</th>
+                <th >Customers State</th>
+                <th >Customers ZipCode</th>
+                <th >Customers Phone</th>
+                <th> Edit Customers</th>
+                <th> Delete Customers</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for info in list_info %}
+                <tr>
+                    <td >{{ info.name }}</td>
+                    <td >{{ info.email }}</td>
+                    <td >{{ info.cust_number }}</td>
+                    <td >{{ info.city }}</td>
+                    <td >{{ info.state }}</td>
+                    <td >{{ info.zipcode }}</td>
+                    <td >{{ info.cell_phone }}</td>
+                    <td ><a class="btn btn-success btn-large" href="{% url 'tc:edit_customer'  user_id=info.id %}">Edit</a></td>
+                    <td ><a class="btn btn-danger btn-large" href="{% url 'tc:delete_customer'  user_id=info.id %}" onclick="return confirm('Are you sure you want to delete?')"
+
+  >Delete</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    <a href="{% url 'tc:customer_summary_pdf' %}"  class="row"><span class="btn btn-primary">Download Report</span></a>
+
+    </div>
+{% endblock body_content %}
