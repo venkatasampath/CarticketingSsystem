@@ -56,15 +56,32 @@
     {% endif %}
     {% if request.user.role == "customer" %}
     <h2> Welcome Customer</h2>
-        <div class="card" style="width: 30rem;">
-                    <div class="card-header">
+        <div class="row" >
+                    <div class="card" style="width: 40rem;">
+                        <div class="card-header">
                         <h5 class="card-title">Add Tickets</h5>
                     </div>
                     <img src="{% static "images/tickets.png" %}" width="200" height="200" class="card-img-top" alt="Sessions">
                     <div class="card-body">
                         <a href="{% url "tc:add_customer_ticket" %}" class="btn btn-primary">Add New Ticket</a>
                     </div>
-                </div>
+                    </div>
+
+
+
+
+                    <div class="card" style="width:40rem;">
+                        <div class="card-header">
+                        <h5 class="card-title">View Tickets</h5>
+                    </div>
+                    <img src="{% static "images/images.jfif" %}" width="200" height="200" class="card-img-top" alt="Sessions">
+                    <div class="card-body">
+                        <a href="{% url "tc:view_Customer_tickets" %}" class="btn btn-primary">View ickets</a>
+                    </div>
+        </div>
+
+
+        </div>>
 
     <!-- <a style="margin-right:5px;" href = '{% url "tc:view_Customer_tickets" %}'>View Your Tickets</a>-->
     {% endif %}
